@@ -9,6 +9,7 @@ An end-to-end Data Analytics Portfolio Project analyzing 3,000,000 student recor
 This project analyzes a large dataset of 3 million student records to identify the key factors influencing academic performance.
 
 The analysis focuses on exploring relationships between:
+
 	•	Study habits
 	•	Stress levels
 	•	Sleep patterns
