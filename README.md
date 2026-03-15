@@ -2,7 +2,6 @@
 
 An end-to-end Data Analytics Portfolio Project analyzing 3,000,000 student records to uncover the hidden drivers of academic success, dropout risk, and lifestyle impact.
 
-⸻
 
 # 📌 Project Overview
 
@@ -18,7 +17,7 @@ The analysis focuses on exploring relationships between:
 
 The goal of this project is to uncover data-driven insights that can improve student success rates and help identify at-risk students early.
 
-⸻
+
 
 # 🎯 Project Objective
 
@@ -30,46 +29,46 @@ The objective of this project was to simulate a real-world data analytics workfl
 	•	Build interactive dashboards
 	•	Extract actionable insights
 
-⸻
+
 
 # 🧭 Project Workflow & Tech Stack
 
 Phase	Tools	Purpose :
 
 **Phase 1 :** 	MySQL	Data loading and exploration
-Phase 2	Excel / Power Query	Data transformation & feature engineering
-Phase 3	Power BI / DAX	Data modeling & interactive dashboards
+**Phase 2	 :** Excel / Power Query	Data transformation & feature engineering
+**Phase 3	 :** Power BI / DAX	Data modeling & interactive dashboards
 
 
-⸻
 
-** 1️⃣ Phase 1 — Database Management & SQL Exploration **
-Objective
+
+# 1️⃣ Phase 1 — Database Management & SQL Exploration Objective
 
 Load the 3-million-row dataset into a relational database and perform initial exploration to validate the dataset and establish baseline metrics.
 
+
+**Key Operations Performed **
+
+**Data Ingestion**
+
+**Large CSV files were imported into MySQL using:**
+
+• LOAD DATA LOCAL INFILE
+
+** This approach allows efficient loading of large datasets.*
+
 ⸻
 
-Key Operations Performed
+# Data Validation 
 
-Data Ingestion
-
-Large CSV files were imported into MySQL using:
-
-LOAD DATA LOCAL INFILE
-
-This approach allows efficient loading of large datasets.
-
-⸻
-
-Data Validation
-
-Initial checks included:
-	•	Row count verification
+**Initial checks included:**
+	
+ •	Row count verification
 	•	Dataset integrity validation
 	•	Exploratory aggregations
 
-Example:
+**Example:**
+
 
 SELECT COUNT(*)
 FROM students_performance;
