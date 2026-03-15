@@ -1,6 +1,6 @@
 # 🎓 Student Academic Performance Analysis
 
-> An end-to-end **Data Analytics Portfolio Project** analyzing **3,000,000 student records** to uncover the hidden drivers of academic success, dropout risk, and lifestyle impact.
+> An end-to-end **Data Analytics Project** analyzing **3,000,000 student records** to uncover the hidden drivers of academic success, dropout risk, and lifestyle impact.
 
 ---
 
