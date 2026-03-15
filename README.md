@@ -23,6 +23,7 @@ The goal of this project is to uncover data-driven insights that can improve stu
 # 🎯 Project Objective
 
 The objective of this project was to simulate a real-world data analytics workflow, demonstrating the ability to:
+
 	•	Handle large-scale datasets
 	•	Perform SQL data exploration
 	•	Apply feature engineering
@@ -33,8 +34,9 @@ The objective of this project was to simulate a real-world data analytics workfl
 
 # 🧭 Project Workflow & Tech Stack
 
-Phase	Tools	Purpose
-Phase 1	MySQL	Data loading and exploration
+Phase	Tools	Purpose :
+
+**Phase 1 :** 	MySQL	Data loading and exploration
 Phase 2	Excel / Power Query	Data transformation & feature engineering
 Phase 3	Power BI / DAX	Data modeling & interactive dashboards
 
