@@ -1,41 +1,85 @@
 # 🎓 Student Academic Performance Analysis
-An end-to-end data analytics portfolio project analyzing 3,000,000 student records to uncover the hidden drivers of academic success, drop-out risks, and lifestyle impacts.
+
+An end-to-end Data Analytics Portfolio Project analyzing 3,000,000 student records to uncover the hidden drivers of academic success, dropout risk, and lifestyle impact.
+
+⸻
 
 # 📌 Project Overview
-This project analyzes a massive dataset of 3 million student records to uncover the primary factors influencing academic performance. By examining study habits, stress levels, sleep patterns, and physical activity, this analysis identifies actionable insights to improve student success rates.
 
-Objective: To execute a complete, industry-standard data analytics workflow—from raw data ingestion to interactive executive dashboarding—demonstrating proficiency in large-scale data handling.
+This project analyzes a large dataset of 3 million student records to identify the key factors influencing academic performance.
 
-🧭 Project Workflow & Tech Stack
-[x] Phase 1: Database Management & Exploration (MySQL)
+The analysis focuses on exploring relationships between:
+	•	Study habits
+	•	Stress levels
+	•	Sleep patterns
+	•	Physical activity
+	•	Academic results
 
-[x] Phase 2: Data Transformation & Feature Engineering (Power Query / Excel)
+The goal of this project is to uncover data-driven insights that can improve student success rates and help identify at-risk students early.
 
-[x] Phase 3: Data Modeling & Interactive Visualization (Power BI / DAX)
+⸻
 
-1️⃣ Phase 1: Database Management & SQL Exploration
-Objective: Load the massive 3-million-row CSV into a relational database to verify integrity and establish baseline metrics.
+# 🎯 Project Objective
 
-Key Operations Performed:
+The objective of this project was to simulate a real-world data analytics workflow, demonstrating the ability to:
+	•	Handle large-scale datasets
+	•	Perform SQL data exploration
+	•	Apply feature engineering
+	•	Build interactive dashboards
+	•	Extract actionable insights
 
-Data Ingestion: Handled large-scale data loading using LOAD DATA LOCAL INFILE.
+⸻
 
-Data Validation: Verified record counts and ran exploratory aggregations to establish global baselines.
+# 🧭 Project Workflow & Tech Stack
 
-Dynamic Binning: Utilized complex CASE statements to categorize continuous variables (e.g., family income and sleep brackets).
+Phase	Tools	Purpose
+Phase 1	MySQL	Data loading and exploration
+Phase 2	Excel / Power Query	Data transformation & feature engineering
+Phase 3	Power BI / DAX	Data modeling & interactive dashboards
 
-SQL
--- Initial Data Load & Verification
-LOAD DATA LOCAL INFILE "C:\\Users\\Karma\\Downloads\\Students performance\\student_academic_performance_1M.csv"
-INTO TABLE students_performance
-FIELDS TERMINATED BY ","
-IGNORE 1 ROWS;
 
--- Verifying the 3 Million Record Count
-SELECT COUNT(*) 
+⸻
+
+** 1️⃣ Phase 1 — Database Management & SQL Exploration **
+Objective
+
+Load the 3-million-row dataset into a relational database and perform initial exploration to validate the dataset and establish baseline metrics.
+
+⸻
+
+Key Operations Performed
+
+Data Ingestion
+
+Large CSV files were imported into MySQL using:
+
+LOAD DATA LOCAL INFILE
+
+This approach allows efficient loading of large datasets.
+
+⸻
+
+Data Validation
+
+Initial checks included:
+	•	Row count verification
+	•	Dataset integrity validation
+	•	Exploratory aggregations
+
+Example:
+
+SELECT COUNT(*)
 FROM students_performance;
 
--- Grouping Sleep Hours into Analytical Categories
+
+⸻
+
+Dynamic Data Binning
+
+Continuous variables were transformed into analytical categories using SQL CASE statements.
+
+Example:
+
 SELECT 
     CASE
         WHEN sleep_hours >= 9.1 THEN 'Surplus Recovery (9-10)'
@@ -49,45 +93,157 @@ SELECT
 FROM students_performance
 GROUP BY sleep_hours_category
 ORDER BY sleep_hours_category DESC;
-Initial Data Load & Row Count Verification:
 
-Creating Categorical Bins via SQL CASE Statements:
 
-2️⃣ Phase 2: Data Transformation & Feature Engineering
-Objective: Transition from raw database values to actionable insights by engineering analytical categories.
+⸻
 
-Engineered Features Included:
+2️⃣ Phase 2 — Data Transformation & Feature Engineering
 
-Physical Activity Categories: Segmented raw scores into Endurance, High Volume, Hypertrophy Zone, Active Maintenance, and Rest using Power Query conditional logic.
+Objective
 
-Study Hour Brackets: Grouped daily study hours into functional tiers for easier dashboard filtering.
+Transform raw dataset variables into analytical features that simplify analysis and improve dashboard usability.
 
-Power Query Conditional Formatting Workflow:
+⸻
 
-3️⃣ Phase 3: Advanced Analytics & Power BI Modeling
-Objective: Connect the cleaned dataset to Power BI to build an interactive dashboard powered by custom DAX metrics.
+Engineered Features
 
-Key DAX Measures Created:
+Several analytical columns were created using Power Query and Excel logic.
 
-Top Performers: Dynamically filters and counts students flagged as high-achievers.
+⸻
 
-At-Risk Students: Tracks students falling below critical academic and lifestyle thresholds.
+Physical Activity Categories
 
-Code snippet
-// Calculating Total Top Performers
-Top Performers = CALCULATE(
-    COUNTROWS('student_academic_performance (3)'), 
-    'student_academic_performance (3)'[top_performer_flag] = TRUE()
+Physical activity scores were segmented into meaningful groups:
+	•	Endurance
+	•	High Volume
+	•	Hypertrophy Zone
+	•	Active Maintenance
+	•	Rest
+
+⸻
+
+Study Hour Brackets
+
+Daily study hours were grouped into tiers to make filtering and analysis easier.
+
+⸻
+
+Sleep Categories
+
+Sleep hours were categorized as follows:
+
+Category	Range
+Critical Deficit	3 – 5 hours
+Sub-optimal	5 – 7 hours
+Optimal Range	7 – 9 hours
+Surplus Recovery	9 – 10 hours
+
+
+⸻
+
+3️⃣ Phase 3 — Advanced Analytics & Power BI Modeling
+
+Objective
+
+Create an interactive Power BI dashboard to explore academic performance patterns and identify success drivers.
+
+⸻
+
+Key Metrics Created
+
+Several DAX measures were created to track important performance indicators.
+
+Examples include:
+	•	Top Performers
+	•	At-Risk Students
+	•	Average GPA
+	•	Pass Rate
+	•	Academic Success Indicators
+
+Example DAX Measure:
+
+Top Performers =
+CALCULATE(
+COUNTROWS('student_academic_performance'),
+'student_academic_performance'[top_performer_flag] = TRUE()
 )
-DAX Measure Creation (Top Performers KPI):
 
-💡 Executive Insights & Reporting
-Based on the SQL aggregations and dataset analysis, several definitive trends emerged regarding the 3 million students tracked:
 
-📈 The Direct Impact of Study Hours: There is a direct, quantifiable correlation between study volume and final grades. Students studying 0 hours averaged a 1.9 GPA, while those studying 8 hours daily achieved a 3.7 GPA.
+⸻
 
-⚠️ The Cost of Stress: High stress is a massive detractor from academic success. Students reporting a 0 stress index maintained an average 2.8 GPA, whereas those maxing out the stress index (10) saw their average GPA plummet to 2.12.
+📊 Interactive Dashboard
 
-🎯 Overall Success & Risk Rates: Out of the total student body, 2.4 million students successfully passed, while roughly 577,000 failed. Crucially, the analysis flagged 146,000 students as "at-risk," providing a clear target demographic for intervention.
+The final Power BI dashboard enables users to explore relationships between lifestyle factors and academic performance.
 
-💤 Sleep Deficits Drive Stress: While the average GPA remained relatively flat across sleep categories, students in the Critical Deficit (3-5 hours) sleep range reported massively higher average stress levels (6.07) compared to those in the Surplus Recovery range (3.44).students in the Critical Deficit (3-5 hours) sleep range reported massively higher average stress levels (6.07) compared to those in the Surplus Recovery range (3.44).
+Dashboard pages include:
+	•	Overview KPIs
+	•	Academic Performance Analysis
+	•	Lifestyle & Behavior Analysis
+	•	Advanced Student Risk Insights
+
+⸻
+
+💡 Key Insights
+
+The analysis of 3 million student records revealed several important patterns.
+
+⸻
+
+📈 Study Hours Strongly Influence GPA
+
+Students studying 0 hours per day averaged a GPA of 1.9, while students studying 8 hours per day achieved an average GPA of 3.7.
+
+This demonstrates a strong relationship between study time and academic success.
+
+⸻
+
+⚠️ Stress Significantly Reduces Academic Performance
+
+Students with the highest stress index (10) had an average GPA of 2.12, compared to 2.8 GPA among low-stress students.
+
+⸻
+
+🎯 Student Success & Risk Distribution
+
+Out of the 3 million students analyzed:
+	•	2.4 million students passed
+	•	577,000 students failed
+	•	146,000 students were identified as at-risk
+
+These students represent a key target group for academic intervention.
+
+⸻
+
+💤 Sleep Deficits Increase Stress Levels
+
+Students sleeping 3–5 hours per night reported significantly higher stress levels (6.07 average stress) compared to students sleeping 9–10 hours (3.44 stress average).
+
+⸻
+
+🚀 Project Conclusion
+
+This project demonstrates a complete Data Analytics lifecycle, including:
+	•	Large-scale SQL data exploration
+	•	Feature engineering
+	•	Power BI dashboard development
+	•	Insight generation from complex datasets
+
+The final dashboard transforms raw student records into clear, actionable insights that can support better educational decision-making.
+
+⸻
+
+📂 Repository Structure
+
+/SQL
+   exploration_queries.sql
+
+/PowerBI
+   student_dashboard.pbix
+
+/Data
+   cleaned_dataset.csv
+
+README.md
+
+
+⸻
